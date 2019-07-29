@@ -1,11 +1,16 @@
 <div id="login">
+  <div>
+    <section class="background-pic"></section>
+  </div>
   <div class="container">
     <div class="content">
       <div class="ui segment">
         <div class="logo">
           <img src="assets/images/TOHacks - Logo.png" />
         </div>
-
+        <body background="logo.png">
+          <div class="container" id="root-view" ui-view></div>
+        </body>
         <div class="ui divider"></div>
 
         <div class="ui small error message" ng-show="error">
@@ -89,13 +94,21 @@
         <div class="ui divider"></div>
 
         <div ng-show="loginState === 'login'" class="forgot">
-          <a href="#" ng-click="setLoginState('forgot')">
+          <a
+            href="#"
+            ng-click="setLoginState('forgot')"
+            style="color: rgb(3, 7, 3)"
+          >
             Forgot Password?
           </a>
         </div>
 
         <div ng-show="loginState === 'forgot'" class="forgot">
-          <a href="#" ng-click="setLoginState('login')">
+          <a
+            href="#"
+            style="color: rgb(3, 7, 3)"
+            ng-click="setLoginState('login')"
+          >
             {{ regIsOpen ? "Login or Register" : "Login" }}
           </a>
         </div>
